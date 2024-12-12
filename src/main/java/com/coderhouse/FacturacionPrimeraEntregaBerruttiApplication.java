@@ -8,6 +8,7 @@ public class FacturacionPrimeraEntregaBerruttiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FacturacionPrimeraEntregaBerruttiApplication.class, args);
+		
 	}
 
 }
