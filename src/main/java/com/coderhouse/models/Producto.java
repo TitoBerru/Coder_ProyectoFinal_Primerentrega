@@ -29,7 +29,7 @@ public class Producto {
 	@Column(length = 500)
 	private String descripcionProducto;
 	
-	@Column(nullable = false, length = 50)
+	@Column(length = 50)
 	private String categoriaProducto;
 	
 	@Column(length = 50)
@@ -44,14 +44,14 @@ public class Producto {
 	 @Column(nullable = false)
 	private int cantidadStockProducto;
 	 
-	 @Column(nullable = false)
-	private BigDecimal precioCompraProducto;
+	
+	private int precioCompraProducto;
 	 
 	@Column(nullable = false)
-	private BigDecimal precioVentaProducto;
+	private int precioVentaProducto;
 	
 	
-	private BigDecimal descuentoProducto;
+	private int descuentoProducto;
 	
 	 @Column(length = 3)
 	private String monedaProducto;
@@ -71,150 +71,163 @@ public class Producto {
 	
 	private List<Cliente> clientes = new ArrayList<>();
 
+		// Constructores
 	public Producto() {
 		super();
 	}
 
-	public Long getId() {
-		return id;
-	}
+		public Producto(String nombreProducto, int cantidadStockProducto, int precioCompraProducto,
+				int precioVentaProducto, int descuentoProducto, boolean estadoActivoProducto) {
+			this();
+			this.nombreProducto = nombreProducto;
+			this.cantidadStockProducto = cantidadStockProducto;
+			this.precioCompraProducto = precioCompraProducto;
+			this.precioVentaProducto = precioVentaProducto;
+			this.descuentoProducto = descuentoProducto;
+			this.estadoActivoProducto = estadoActivoProducto;
+		}
+		
+		// Getters and setters
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+		public Long getId() {
+			return id;
+		}
 
-	public String getNombreProducto() {
-		return nombreProducto;
-	}
+		public void setId(Long id) {
+			this.id = id;
+		}
 
-	public void setNombreProducto(String nombreProducto) {
-		this.nombreProducto = nombreProducto;
-	}
+		public String getNombreProducto() {
+			return nombreProducto;
+		}
 
-	public String getDescripcionProducto() {
-		return descripcionProducto;
-	}
+		public void setNombreProducto(String nombreProducto) {
+			this.nombreProducto = nombreProducto;
+		}
 
-	public void setDescripcionProducto(String descripcionProducto) {
-		this.descripcionProducto = descripcionProducto;
-	}
+		public String getDescripcionProducto() {
+			return descripcionProducto;
+		}
 
-	public String getCategoriaProducto() {
-		return categoriaProducto;
-	}
+		public void setDescripcionProducto(String descripcionProducto) {
+			this.descripcionProducto = descripcionProducto;
+		}
 
-	public void setCategoriaProducto(String categoriaProducto) {
-		this.categoriaProducto = categoriaProducto;
-	}
+		public String getCategoriaProducto() {
+			return categoriaProducto;
+		}
 
-	public String getMarcaProducto() {
-		return marcaProducto;
-	}
+		public void setCategoriaProducto(String categoriaProducto) {
+			this.categoriaProducto = categoriaProducto;
+		}
 
-	public void setMarcaProducto(String marcaProducto) {
-		this.marcaProducto = marcaProducto;
-	}
+		public String getMarcaProducto() {
+			return marcaProducto;
+		}
 
-	public String getProveedorProducto() {
-		return proveedorProducto;
-	}
+		public void setMarcaProducto(String marcaProducto) {
+			this.marcaProducto = marcaProducto;
+		}
 
-	public void setProveedorProducto(String proveedorProducto) {
-		this.proveedorProducto = proveedorProducto;
-	}
+		public String getProveedorProducto() {
+			return proveedorProducto;
+		}
 
-	public String getImgUrlProducto() {
-		return imgUrlProducto;
-	}
+		public void setProveedorProducto(String proveedorProducto) {
+			this.proveedorProducto = proveedorProducto;
+		}
 
-	public void setImgUrlProducto(String imgUrlProducto) {
-		this.imgUrlProducto = imgUrlProducto;
-	}
+		public String getImgUrlProducto() {
+			return imgUrlProducto;
+		}
 
-	public int getCantidadStockProducto() {
-		return cantidadStockProducto;
-	}
+		public void setImgUrlProducto(String imgUrlProducto) {
+			this.imgUrlProducto = imgUrlProducto;
+		}
 
-	public void setCantidadStockProducto(int cantidadStockProducto) {
-		this.cantidadStockProducto = cantidadStockProducto;
-	}
+		public int getCantidadStockProducto() {
+			return cantidadStockProducto;
+		}
 
-	public BigDecimal getPrecioCompraProducto() {
-		return precioCompraProducto;
-	}
+		public void setCantidadStockProducto(int cantidadStockProducto) {
+			this.cantidadStockProducto = cantidadStockProducto;
+		}
 
-	public void setPrecioCompraProducto(BigDecimal precioCompraProducto) {
-		this.precioCompraProducto = precioCompraProducto;
-	}
+		public int getPrecioCompraProducto() {
+			return precioCompraProducto;
+		}
 
-	public BigDecimal getPrecioVentaProducto() {
-		return precioVentaProducto;
-	}
+		public void setPrecioCompraProducto(int precioCompraProducto) {
+			this.precioCompraProducto = precioCompraProducto;
+		}
 
-	public void setPrecioVentaProducto(BigDecimal precioVentaProducto) {
-		this.precioVentaProducto = precioVentaProducto;
-	}
+		public int getPrecioVentaProducto() {
+			return precioVentaProducto;
+		}
 
-	public BigDecimal getDescuentoProducto() {
-		return descuentoProducto;
-	}
+		public void setPrecioVentaProducto(int precioVentaProducto) {
+			this.precioVentaProducto = precioVentaProducto;
+		}
 
-	public void setDescuentoProducto(BigDecimal descuentoProducto) {
-		this.descuentoProducto = descuentoProducto;
-	}
+		public int getDescuentoProducto() {
+			return descuentoProducto;
+		}
 
-	public String getMonedaProducto() {
-		return monedaProducto;
-	}
+		public void setDescuentoProducto(int descuentoProducto) {
+			this.descuentoProducto = descuentoProducto;
+		}
 
-	public void setMonedaProducto(String monedaProducto) {
-		this.monedaProducto = monedaProducto;
-	}
+		public String getMonedaProducto() {
+			return monedaProducto;
+		}
 
-	public Date getFechaAltaProducto() {
-		return fechaAltaProducto;
-	}
+		public void setMonedaProducto(String monedaProducto) {
+			this.monedaProducto = monedaProducto;
+		}
 
-	public void setFechaAltaProducto(Date fechaAltaProducto) {
-		this.fechaAltaProducto = fechaAltaProducto;
-	}
+		public Date getFechaAltaProducto() {
+			return fechaAltaProducto;
+		}
 
-	public Date getFechaModificacionProducto() {
-		return fechaModificacionProducto;
-	}
+		public void setFechaAltaProducto(Date fechaAltaProducto) {
+			this.fechaAltaProducto = fechaAltaProducto;
+		}
 
-	public void setFechaModificacionProducto(Date fechaModificacionProducto) {
-		this.fechaModificacionProducto = fechaModificacionProducto;
-	}
+		public Date getFechaModificacionProducto() {
+			return fechaModificacionProducto;
+		}
 
-	public boolean isEstadoActivoProducto() {
-		return estadoActivoProducto;
-	}
+		public void setFechaModificacionProducto(Date fechaModificacionProducto) {
+			this.fechaModificacionProducto = fechaModificacionProducto;
+		}
 
-	public void setEstadoActivoProducto(boolean estadoActivoProducto) {
-		this.estadoActivoProducto = estadoActivoProducto;
-	}
+		public boolean isEstadoActivoProducto() {
+			return estadoActivoProducto;
+		}
 
-	public List<Cliente> getClientes() {
-		return clientes;
-	}
+		public void setEstadoActivoProducto(boolean estadoActivoProducto) {
+			this.estadoActivoProducto = estadoActivoProducto;
+		}
 
-	public void setClientes(List<Cliente> clientes) {
-		this.clientes = clientes;
-	}
+		public List<Cliente> getClientes() {
+			return clientes;
+		}
 
-	@Override
-	public String toString() {
-		return "Producto [id=" + id + ", nombreProducto=" + nombreProducto + ", descripcionProducto="
-				+ descripcionProducto + ", categoriaProducto=" + categoriaProducto + ", marcaProducto=" + marcaProducto
-				+ ", proveedorProducto=" + proveedorProducto + ", imgUrlProducto=" + imgUrlProducto
-				+ ", cantidadStockProducto=" + cantidadStockProducto + ", precioCompraProducto=" + precioCompraProducto
-				+ ", precioVentaProducto=" + precioVentaProducto + ", descuentoProducto=" + descuentoProducto
-				+ ", monedaProducto=" + monedaProducto + ", fechaAltaProducto=" + fechaAltaProducto
-				+ ", fechaModificacionProducto=" + fechaModificacionProducto + ", estadoActivoProducto="
-				+ estadoActivoProducto + ", clientes=" + clientes + "]";
-	}
+		public void setClientes(List<Cliente> clientes) {
+			this.clientes = clientes;
+		}
 
+		@Override
+		public String toString() {
+			return "Producto [id=" + id + ", nombreProducto=" + nombreProducto + ", descripcionProducto="
+					+ descripcionProducto + ", categoriaProducto=" + categoriaProducto + ", marcaProducto="
+					+ marcaProducto + ", proveedorProducto=" + proveedorProducto + ", imgUrlProducto=" + imgUrlProducto
+					+ ", cantidadStockProducto=" + cantidadStockProducto + ", precioCompraProducto="
+					+ precioCompraProducto + ", precioVentaProducto=" + precioVentaProducto + ", descuentoProducto="
+					+ descuentoProducto + ", monedaProducto=" + monedaProducto + ", fechaAltaProducto="
+					+ fechaAltaProducto + ", fechaModificacionProducto=" + fechaModificacionProducto
+					+ ", estadoActivoProducto=" + estadoActivoProducto + ", clientes=" + clientes + "]";
+		}
 	
 	
 	

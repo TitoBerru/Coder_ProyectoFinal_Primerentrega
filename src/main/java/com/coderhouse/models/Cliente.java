@@ -27,31 +27,31 @@ public class Cliente {
 	@Column(nullable = false, length = 100)
 	private String apellido;
 	
-	@Column(unique= true)
+	@Column(nullable = false, unique= true)
 	private int dni;
 	
-	@Column(nullable = false, unique = true, length = 100)
+	@Column(unique = true, length = 100)
 	private String email;
 	
-	@Column(nullable = false, length = 150)
+	@Column(length = 150)
 	private String direccion;
 	
-	@Column(nullable = false, length = 100)
+	@Column(length = 100)
 	private String localidad;
 	
-	@Column(nullable = false, length = 100)
+	@Column(length = 100)
 	private String provincia;
 	
-	@Column(nullable = false)
+	
 	private Date fechaNac;
 	
-	@Column(nullable = false)
+	
 	private Date fechaRegistro;
 	
-	@Column(nullable = true)
+
 	private Date fechaModificacionRegistro;
 	
-	@Column(nullable = false)
+
 	private boolean estadoActivo;
 	
 	@ManyToMany(mappedBy = "clientes", fetch = FetchType.EAGER)
@@ -59,11 +59,38 @@ public class Cliente {
 	
 	private LocalDateTime createdAt;
 
-	// Constructor
+	// Constructores
 	public Cliente() {
 		super();
 	}
-	
+
+	public Cliente(String nombre, String apellido, int dni, boolean estadoActivo, List<Producto> productos) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.estadoActivo = estadoActivo;
+		this.productos = productos;
+	}
+
+
+
+
+
+
+
+
+
+	public Cliente(String nombre, String apellido, int dni) {
+		this();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+	}
+
+
+
+
 	// Getters and Setters
 
 	public Long getId() {
