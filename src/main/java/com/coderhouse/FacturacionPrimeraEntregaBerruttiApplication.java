@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.coderhouse.dao.DAO;
 import com.coderhouse.models.Cliente;
 import com.coderhouse.models.Producto;
+import com.coderhouse.models.Venta;
 
 @SpringBootApplication
 public class FacturacionPrimeraEntregaBerruttiApplication  implements CommandLineRunner{
@@ -33,6 +34,9 @@ public class FacturacionPrimeraEntregaBerruttiApplication  implements CommandLin
 			Cliente cliente2 = new Cliente("Adrian", "Adriano", 21733334);
 			Cliente cliente3 = new Cliente("Manuel", "Monserrat", 24733334);
 			
+			Venta venta1= new Venta(1L, 1L, 10, 1);
+			Venta venta2= new Venta(3L, 2L, 100, 2);
+			
 			dao.persistirCliente(cliente1);
 			dao.persistirCliente(cliente2);
 			dao.persistirCliente(cliente3);
@@ -40,6 +44,9 @@ public class FacturacionPrimeraEntregaBerruttiApplication  implements CommandLin
 			dao.persistirProducto(producto1);
 			dao.persistirProducto(producto2);
 			dao.persistirProducto(producto3);
+			
+			dao.persistirVenta(venta1);
+			dao.persistirVenta(venta2);
 			
 	} catch(Exception e) {
 		e.printStackTrace(System.err);
