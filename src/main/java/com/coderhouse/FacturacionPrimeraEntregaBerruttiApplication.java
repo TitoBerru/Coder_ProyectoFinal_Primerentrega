@@ -22,7 +22,6 @@ public class FacturacionPrimeraEntregaBerruttiApplication  implements CommandLin
 
 	@Override
 	public void run(String... args) throws Exception {
-		
 		try {
 			System.out.println("La aplicación se ha iniciado correctamente...");
 			
