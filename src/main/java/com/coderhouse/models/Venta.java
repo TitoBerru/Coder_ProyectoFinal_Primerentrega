@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "ventas") 
 public class Venta {
 	
+	
 	@Id // Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) // para volverlo autoincremental
 	private Long id;
