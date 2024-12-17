@@ -19,6 +19,7 @@ public class Venta {
 	
 	private Date fechaVenta;
 	
+	@Column(unique = true, nullable = false)
 	private Long idProducto;
 	private Long idCliente;
 	private int precioVentaProducto;
