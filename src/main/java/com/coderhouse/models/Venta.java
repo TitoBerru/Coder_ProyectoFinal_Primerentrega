@@ -25,6 +25,8 @@ public class Venta {
 	private Long idProducto;
 	
 	private Long idCliente;
+	
+	@Column(nullable = false)
 	private int precioVentaProducto;
 	private int cantidadProducto;
 	
