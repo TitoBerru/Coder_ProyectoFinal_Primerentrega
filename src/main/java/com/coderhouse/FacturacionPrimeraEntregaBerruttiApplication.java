@@ -37,17 +37,18 @@ public class FacturacionPrimeraEntregaBerruttiApplication  implements CommandLin
 			Venta venta1= new Venta(1L, 1L, 10, 1);
 			Venta venta2= new Venta(3L, 2L, 100, 2);
 			
-			dao.persistirCliente(cliente1);
-			dao.persistirCliente(cliente2);
-			dao.persistirCliente(cliente3);
+//			dao.persistirCliente(cliente1);
+//			dao.persistirCliente(cliente2);
+//			dao.persistirCliente(cliente3);
+			dao.persistirCliente(cliente4);
 			
-			dao.persistirProducto(producto1);
-			dao.persistirProducto(producto2);
-			dao.persistirProducto(producto3);
-			
-			dao.persistirVenta(venta1);
-			dao.persistirVenta(venta2);
-			
+//			dao.persistirProducto(producto1);
+//			dao.persistirProducto(producto2);
+//			dao.persistirProducto(producto3);
+//			
+//			dao.persistirVenta(venta1);
+//			dao.persistirVenta(venta2);
+//			
 	} catch(Exception e) {
 		e.printStackTrace(System.err);
 	}
