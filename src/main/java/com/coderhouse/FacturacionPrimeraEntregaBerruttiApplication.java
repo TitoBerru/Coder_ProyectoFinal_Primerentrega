@@ -32,6 +32,7 @@ public class FacturacionPrimeraEntregaBerruttiApplication  implements CommandLin
 			Cliente cliente1 = new Cliente("Pedro", "Serra", 22733334);
 			Cliente cliente2 = new Cliente("Adrian", "Adriano", 21733334);
 			Cliente cliente3 = new Cliente("Manuel", "Monserrat", 24733334);
+			Cliente cliente4 = new Cliente("Catupecu", "Machu", 30123456);
 			
 			Venta venta1= new Venta(1L, 1L, 10, 1);
 			Venta venta2= new Venta(3L, 2L, 100, 2);
